@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Paytone+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <title>Document</title>
+</head>
+<body onload="init()">
+    <div class="card">
+        <div class="search">
+            <input class="sbar"  type="text" placeholder="Enter City Name :" spellcheck="false">
+            <button class="btn"><img src="./images/search.png"></button>
+            
+        </div>
+        <div class="error">
+             <p>Invalid City Name.</p>
+        </div>
+        <div class="wheather">
+           
+                <img class="wicon" src="./images/clouds.png">
+                <h1 class="degree" id="paytone-one-regular">22°c</h1>
+                <h2 class="city" id="paytone-one-regular">Nellore</h2>
+        </div>
+        <div class="details">
+            <div class="hum">
+                <img class="humidity" src="./images/humidity.png">
+                <div class="column1">
+                    <P class="humidity-details" id="paytone-one-regular">30%</P>
+                    <P id="foot-d">Humidity rate</P>
+                </div>
+            </div>
+            <div class="win">
+                <img class="wind" src="./images/wind.png">
+                <div class="column2">
+                    <P class="wind-details" id="paytone-one-regular">30 Kmph</P>
+                    <P id="foot-d">Wind Speed</P>
+                </div>
+            </div>
+
+        </div>
+        
+    </div>
+
+    <script>
+        
+
+      const apiKey = "c5ca6557f3ab86c88cebfb0226688eb8";
+      const apiURL = "https://api.openweathermap.org/data/2.5/weather?";
+      const wheatherIcon = document.querySelector(".wicon");
+     
+     async function init()
+     {
+        const result = await fetch(`${apiURL}q=Nellore &appid=${apiKey}&units=metric`);
+        var acc = await result.json();
+        console.log(acc);
+        document.querySelector(".city").innerHTML = acc.name;
+        document.querySelector(".degree").innerHTML = Math.round(acc.main.temp) + "°C";
+        document.querySelector(".humidity-details").innerHTML = acc.main.humidity + "%";
+        document.querySelector(".wind-details").innerHTML = acc.wind.speed + + " Kmph";
+         console.log(acc.weather[0].main);
+
+       
+
+        if(acc.weather[0].main == "Rain")
+        {
+            wheatherIcon.src  = "./images/rain.png";
+        }
+        else if(acc.weather[0].main == "Snow")
+        {
+            wheatherIcon.src = "./images/snow.png";
+
+        }
+        else if(acc.weather[0].main == "Drizzle")
+        {
+            wheatherIcon.src = "./images/drizzle.png";
+
+
+        }
+
+        else if(acc.weather[0].main == "Clear")
+        {
+            wheatherIcon.src = "./images/clear.png";
+
+        }
+
+        else if(acc.weather[0].main == "Mist")
+        {
+            wheatherIcon.src = "./images/mist.png";
+
+        }
+        else if(acc.weather[0].main == 'Clouds')
+        {
+            wheatherIcon.src = "./images/clouds.png";
+
+        }
+
+     }
+    //   q={city name}&appid={API key}
+
+      
+    async function wheather(data)
+    {
+        const result = await fetch(`${apiURL}q=${data}&appid=${apiKey}&units=metric`);
+        var access = await result.json();
+        console.log(access);
+
+        
+        document.querySelector(".city").innerHTML = access.name;
+        document.querySelector(".degree").innerHTML = Math.round(access.main.temp) + "°C";
+        document.querySelector(".humidity-details").innerHTML = access.main.humidity + "%";
+        document.querySelector(".wind-details").innerHTML = access.wind.speed + + " Kmph";
+        
+        if(access.weather[0].main == "Rain")
+        {
+            wheatherIcon.src  = "./images/rain.png";
+        }
+        else if(access.weather[0].main == "Snow")
+        {
+            wheatherIcon.src = "./images/snow.png";
+
+        }
+        else if(access.weather[0].main == "Drizzle")
+        {
+            wheatherIcon.src = "./images/drizzle.png";
+
+
+        }
+
+        else if(access.weather[0].main == "Clear")
+        {
+            wheatherIcon.src = "./images/clear.png";
+
+        }
+
+        else if(access.weather[0].main == "Mist")
+        {
+            wheatherIcon.src = "./images/mist.png";
+
+        }
+        else if(access.weather[0].main == "Clouds")
+        {
+            wheatherIcon.src = "./images/clouds.png";
+
+        }
+        // else if(access.weather[0].main == 'Clouds')
+        // {
+        //     wheatherIcon.src = "./images/clouds.png";
+
+        // }
+        console.log(access.weather[0].main);
+
+        // document.querySelector(".wheather").style.display = "block";
+        // document.querySelector(".details").style.display = "block";
+    }
+
+    
+    const buttonKey = document.querySelector(".btn");
+    buttonKey.addEventListener("click",()=>
+    {
+
+         var searchKey = document.querySelector(".sbar").value;
+        wheather(searchKey);
+    })
+    
+    </script>
+</body>
+</html>

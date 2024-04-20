@@ -1,0 +1,171 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+   background: linear-gradient(100deg,rgb(34, 66, 125),rgb(54, 56, 200),rgb(26, 22, 145));
+   /* background: linear-gradient(100deg,rgb(26, 199, 179),rgb(30, 159, 133),rgb(46, 222, 172));   */
+   background-repeat: no-repeat;
+   background-attachment: fixed;
+   background-size: cover;
+}
+#paytone-one-regular {
+    font-family: "Paytone One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #ffffff;
+  }
+  
+.card{
+    width: 90%;
+    max-width: 350px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    
+    
+    padding: 35px 45px;
+    align-items: center;
+    justify-content: space-around;
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    height: 50%;
+    max-height: 600px;
+    /* background: linear-gradient(125deg,rgb(116, 255, 255),rgb(80, 255, 191)); */
+    /* box-shadow:  20px 20px 60px #0c948b,
+             -20px -20px 60px #1aa58e; */
+    
+    background: linear-gradient(125deg,rgb(115, 117, 240),rgb(25, 27, 165),rgb(7, 7, 121));
+
+
+             box-shadow:  20px 20px 60px #071862,
+             -20px -20px 60px #2d26c0;
+}
+.search{
+    padding: 1px 0px;
+    display: flex;
+    justify-content: space-between;
+   
+
+}
+.search input{
+    outline: none;
+    border: 0cap;
+    height: 50px;
+    /* width: 100%; */
+    border-radius: 50px;
+    margin-right: 10px;
+    justify-content: center;
+    flex: 1;
+    align-items: end;
+    text-align: center;
+    padding: 10px 25px;
+}
+.btn{
+    
+    height: 50px;
+    width: 50px;
+    outline: none;
+    border: 0cap;
+
+    justify-content: center;
+    flex: 1;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: end;
+    text-align: center;   
+    padding: 10px 12px;
+    cursor: pointer;
+
+}
+
+.btn img{
+    height: 15px;
+    width: 15px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin-left: 5px;
+
+}
+.btn:hover{
+  opacity: 0.9;
+}
+
+.error{
+
+    text-align: left;
+    margin-top: 3px;
+    margin-right: 150px;
+     font-family: "Paytone One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #0d1151;
+    display: none;
+
+}
+
+.wicon{
+
+    width: 200px;
+    margin-top: 30px;
+
+}
+
+.degree{
+    text-align: center;
+    font-size: 40px;
+    
+}
+.city{
+    text-align: center;
+    font-size: 40px;
+    
+}
+
+.details{
+    display: flex;
+    margin-top: 40px;
+    justify-content: space-between;
+   
+}
+
+.hum{
+    width: 170px;
+    position: relative;
+}
+
+.humidity{
+    width: 60px;
+    /* margin-right: 70px; */
+}
+.wind{
+    width: 60px;
+    margin-left: 70px;
+}
+
+.column1{
+/* display: flex;  */
+/* justify-content: space-between; */
+margin-top: 5px;
+padding-right: 50px;
+
+}
+
+.column2{
+    /* display: flex;  */
+    /* justify-content: space-between; */
+    margin-left: 80PX;
+    
+    }
+p{
+    font-size: 10px;
+    text-align: left;
+   
+}
+
+#foot-d{
+    color: rgb(175, 230, 247);
+}
